@@ -4,8 +4,12 @@ Pirres Rogue, a basic rogue game.
 ## Features
 
 - Levels and rooms
-  - [ ] Basic movement on empty level
+  - [ ] Basic empty level
   - [ ] Basic room generation and movement limitation
+  - [ ] Rooms connected with corridors
+  - [ ] Multiple levels
+- Player
+  - [ ] Move horizontally, vertically and diagonally
 - Monsters
   - [ ] Basic generation, killable by player
   - [ ] HP
