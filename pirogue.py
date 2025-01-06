@@ -13,24 +13,26 @@ class Pirogue:
         self.player = Player()
         pass
 
-    def run(self, stdscr):
+    def run(self, screen):
         curses.noecho()
         curses.cbreak()
         curses.curs_set(0)
 
-        stdscr.clear()
+        screen.clear()
 
         k = 0
         y = 0
         while k != ord('q'):
-            stdscr.clear()
-            self.current_level.draw(stdscr)
-            self.player.move(k)
+            screen.clear()
+            self.current_level.draw(screen)
+            new_x, new_y = self.player.get_move(k)
+            if (self.current_level.player_can_move_to(new_x, new_y)):
+                self.player.set_position(new_x, new_y)
 
-            stdscr.addstr(self.player.y, self.player.x, self.player.character)
-            stdscr.refresh()
+            screen.addstr(self.player.y, self.player.x, self.player.character)
+            screen.refresh()
             y = y + 1
-            k = stdscr.getch()
+            k = screen.getch()
 
         curses.endwin()
 
