@@ -15,17 +15,17 @@ class Room:
         self.height = height
         self.width = width
 
-    def draw(self, screen : window):
+    def draw(self, screen : window) -> None:
         screen.addstr(self.y_offset, self.x_offset, self.wall * self.width)
         for i in range(self.y_offset+1, self.y_offset + self.height-2 ):
             screen.addstr(i, self.x_offset, self.wall + self.floor * (self.width-2) + self.wall)
         screen.addstr(self.y_offset + self.height-2, self.x_offset, self.wall * self.width)
 
-    def is_inside_room(self, x, y):
+    def is_inside_room(self, x, y) -> bool:
         return (self.x_offset <= x < self.x_offset + self.width) and \
                (self.y_offset <= y < self.y_offset + self.height-1)
 
-    def can_move_to(self, x, y):
+    def can_move_to(self, x, y) -> bool:
         if not self.is_inside_room(x, y):
             # We don't know that the player _cannot_ move there, so return true
             return True
@@ -35,3 +35,8 @@ class Room:
             return False
 
         return True
+
+    def get_middle_of_room(self) -> (int, int):
+        x = round((self.x_offset + self.width) / 2)
+        y = round((self.y_offset + self.height) / 2)
+        return x, y

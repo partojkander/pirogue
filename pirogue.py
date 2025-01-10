@@ -12,9 +12,9 @@ class Pirogue:
 
     def __init__(self):
         self.player = Player()
-        pass
 
     def run(self, screen):
+        self.set_player_starting_position()
         curses.noecho()
         curses.cbreak()
         curses.curs_set(0)
@@ -40,10 +40,11 @@ class Pirogue:
     def set_level(self, current_level : Level):
         self.current_level = current_level
 
+    def set_player_starting_position(self):
+        self.player.set_position(*self.current_level.rooms[0].get_middle_of_room())
 
 def main(stdscr):
     p = Pirogue()
-    p.player.set_position(0, 0)
     l = Level(50, 20)
     room = Room(2, 2, 10, 10)
     l.add_room(room)
