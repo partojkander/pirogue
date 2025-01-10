@@ -3,6 +3,7 @@ from curses import wrapper
 
 from level import Level
 from player import Player
+from room import Room
 
 class Pirogue:
 
@@ -26,7 +27,7 @@ class Pirogue:
             screen.clear()
             self.current_level.draw(screen)
             new_x, new_y = self.player.get_move(k)
-            if (self.current_level.player_can_move_to(new_x, new_y)):
+            if self.current_level.player_can_move_to(new_x, new_y):
                 self.player.set_position(new_x, new_y)
 
             screen.addstr(self.player.y, self.player.x, self.player.character)
@@ -42,7 +43,10 @@ class Pirogue:
 
 def main(stdscr):
     p = Pirogue()
+    p.player.set_position(0, 0)
     l = Level(50, 20)
+    room = Room(2, 2, 10, 10)
+    l.add_room(room)
     p.set_level(l)
     p.run(stdscr)
 

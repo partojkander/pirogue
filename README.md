@@ -1,11 +1,11 @@
 # pirogue
-Pirres Rogue, a basic rogue game.
+Pirre's Rogue, a basic rogue game.
 
 ## Features
 
 - Levels and rooms
   - [X] Basic empty level
-  - [ ] Basic room generation and movement limitation
+  - [X] Basic room generation and movement limitation
   - [ ] Rooms connected with corridors
   - [ ] Multiple levels
 - Player
@@ -18,5 +18,7 @@ Pirres Rogue, a basic rogue game.
 - Items
   - [ ] Weapons
   - [ ] Armor
-- [ ] Turn based time system
-- [ ] Decide on a theme
+- Game system
+  - [ ] Turn based time system
+  - [ ] Hunger
+  - [ ] Decide on a theme
