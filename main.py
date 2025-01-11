@@ -1,9 +1,9 @@
 import curses
 from curses import wrapper
 
-from level import Level
-from player import Player
-from room import Room
+from pirogue.level import Level
+from pirogue.player import Player
+from pirogue.room import Room
 
 class Pirogue:
 
