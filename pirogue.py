@@ -46,7 +46,7 @@ class Pirogue:
 def main(stdscr):
     p = Pirogue()
     l = Level(50, 20)
-    room = Room(2, 2, 10, 10)
+    room = Room(2, 2, 5, 5)
     l.add_room(room)
     p.set_level(l)
     p.run(stdscr)

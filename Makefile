@@ -5,8 +5,14 @@ venv/touchfile: requirements.txt
 	. venv/bin/activate; pip install -Ur requirements.txt
 	touch venv/touchfile
 
+update-venv: venv
+	 . venv/bin/activate; pip install -Ur requirements.txt
+
 test: venv
 	. venv/bin/activate; pytest
+
+test-cov: venv
+	. venv/bin/activate; coverage run -m pytest; coverage report
 
 run: venv
 	. venv/bin/activate; python3 pirogue.py

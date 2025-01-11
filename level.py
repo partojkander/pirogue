@@ -1,6 +1,6 @@
 from curses import window
 
-from room import Room
+from .room import Room
 
 class Level:
     width = 0
@@ -27,4 +27,5 @@ class Level:
         return True
 
     def add_room(self, room : Room):
+        # TODO: check that room fits inside level!
         self.rooms.append(room)
