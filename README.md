@@ -10,6 +10,9 @@ Pirre's Rogue, a basic rogue game.
   - [ ] Multiple levels
 - Player
   - [X] Move horizontally, vertically and diagonally
+  - [ ] Inventory
+  - [ ] Name
+  - [ ] Classes
 - Monsters
   - [ ] Basic generation, killable by player
   - [ ] HP
